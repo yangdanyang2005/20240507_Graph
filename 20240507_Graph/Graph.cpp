@@ -638,7 +638,7 @@ againHTML:
 	if (strHTML == "Y")
 	{
 		char strFile[256];
-		string filename = "Graph_html\\";
+		string filename = "Graph_html\\";//使用相对路径
 		filename += "从 ";
 		filename += g.vertex[depart].city;
 		filename += " 到 ";
