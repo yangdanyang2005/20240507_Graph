@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type='text/css'>
+		body, html{width: 100%;height:100%;margin:0;font-family:'微软雅黑';}
+		#allmap{height:100%;width:100%;}
+	</style>
+	<script type='text/javascript' src='http://api.map.baidu.com/api?v=2.0&ak=nSxiPohfziUaCuONe4ViUP2N'></script>
+	<title>从 Beijing 到 London 的最小路费开销路径</title>
+</head>
+<body>
+	<div id='allmap'></div>
+	<script type='text/javascript'>
+		window.onload = function() {
+			alert('欢迎使用本网页！\n\n您可以在本页面中查看从城市 Beijing 到城市 London 的最小路费开销路径。\n\n点击地图上的标记以查看城市信息。\n点击路径以查看详细信息。');
+		};
+		var map = new BMap.Map('allmap');
+		var point = new BMap.Point(0, 0);
+		map.centerAndZoom(point, 2);
+		map.enableScrollWheelZoom(true);
+		var marker0 = new BMap.Marker(new BMap.Point(116.3330, 39.9167));
+		map.addOverlay(marker0);
+		var infoWindow0 = new BMap.InfoWindow("<p style='font-size:14px;'>【起点】<br/>国家：China<br/>城市：Beijing</p>");
+		marker0.addEventListener("click", function(){this.openInfoWindow(infoWindow0); });
+		var marker1 = new BMap.Marker(new BMap.Point(105.9170, 21.0833));
+		map.addOverlay(marker1);
+		var infoWindow1 = new BMap.InfoWindow("<p style='font-size:14px;'>第 1 个途径点：<br/>国家：Vietnam<br/>城市：Hanoi</p>");
+		marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1); });
+		var marker2 = new BMap.Marker(new BMap.Point(102.6000, 17.9667));
+		map.addOverlay(marker2);
+		var infoWindow2 = new BMap.InfoWindow("<p style='font-size:14px;'>第 2 个途径点：<br/>国家：Lao People@s Democratic Republic<br/>城市：Vientiane</p>");
+		marker2.addEventListener("click", function(){this.openInfoWindow(infoWindow2); });
+		var marker3 = new BMap.Marker(new BMap.Point(100.5830, 13.7500));
+		map.addOverlay(marker3);
+		var infoWindow3 = new BMap.InfoWindow("<p style='font-size:14px;'>第 3 个途径点：<br/>国家：Thailand<br/>城市：Bangkok</p>");
+		marker3.addEventListener("click", function(){this.openInfoWindow(infoWindow3); });
+		var marker4 = new BMap.Marker(new BMap.Point(103.8520, 1.2810));
+		map.addOverlay(marker4);
+		var infoWindow4 = new BMap.InfoWindow("<p style='font-size:14px;'>第 4 个途径点：<br/>国家：Singapore<br/>城市：Singapore</p>");
+		marker4.addEventListener("click", function(){this.openInfoWindow(infoWindow4); });
+		var marker5 = new BMap.Marker(new BMap.Point(-0.0833, 51.6000));
+		map.addOverlay(marker5);
+		var infoWindow5 = new BMap.InfoWindow("<p style='font-size:14px;'>【终点】<br/>国家：United Kingdom of Great Britain and Northern Ireland<br/>城市：London</p>");
+		marker5.addEventListener("click", function(){this.openInfoWindow(infoWindow5); });
+    var contentString01 = '第 1 段路线：Beijing, China --> Hanoi, Vietnam\n交通方式：train\n时间花费：48.0000 小时\n路费开销：$ 100.00\n参考信息来源："COPY: http://www.chinahighlights.com/travelguide/transportation/beijing-to-hanoi-train.htm"';
+    var path1 = new BMap.Polyline([
+        new BMap.Point(105.9170, 21.0833),
+        new BMap.Point(116.3330, 39.9167)
+    ], {strokeColor:'#18a45b', strokeWeight:8, strokeOpacity:0.8});
+    map.addOverlay(path1);
+    path1.addEventListener("click", function() {
+        alert(contentString01);
+    });
+    var contentString02 = '第 2 段路线：Hanoi, Vietnam --> Vientiane, Lao People@s Democratic Republic\n交通方式：bus\n时间花费：24.0000 小时\n路费开销：$ 30.00\n参考信息来源："Seat61.com"';
+    var path2 = new BMap.Polyline([
+        new BMap.Point(102.6000, 17.9667),
+        new BMap.Point(105.9170, 21.0833)
+    ], {strokeColor:'#18a45b', strokeWeight:8, strokeOpacity:0.8});
+    map.addOverlay(path2);
+    path2.addEventListener("click", function() {
+        alert(contentString02);
+    });
+    var contentString03 = '第 3 段路线：Vientiane, Lao People@s Democratic Republic --> Bangkok, Thailand\n交通方式：train\n时间花费：13.0000 小时\n路费开销：$ 78.34\n参考信息来源："Visa required by UK, EU, US & Australian citizens. Visas on arriving to Laos are given at Thanaleng (cost US$35 + 1 baht for entry fee)<BR>Can take sleeper train (sleeping accommodation, but cost slightly more $23-37) <BR>Easiest way is from Bangkok to Nong Khai by sleeper train and shuttle train. Shuttle is 300 baht or 500 baht for a minivan.  <BR><BR>http://seat61.com/Laos.htm#Bangkok to Vientiane<BR><BR><BR>"';
+    var path3 = new BMap.Polyline([
+        new BMap.Point(100.5830, 13.7500),
+        new BMap.Point(102.6000, 17.9667)
+    ], {strokeColor:'#18a45b', strokeWeight:8, strokeOpacity:0.8});
+    map.addOverlay(path3);
+    path3.addEventListener("click", function() {
+        alert(contentString03);
+    });
+    var contentString04 = '第 4 段路线：Bangkok, Thailand --> Singapore, Singapore\n交通方式：train\n时间花费：48.0000 小时\n路费开销：$ 65.00\n参考信息来源："COPY: Tickets bought in Singapore are double the price. <BR>Time varies google show about 2 days.<BR><BR>http://seat61.com/Malaysia.htm#Fares"';
+    var path4 = new BMap.Polyline([
+        new BMap.Point(103.8520, 1.2810),
+        new BMap.Point(100.5830, 13.7500)
+    ], {strokeColor:'#18a45b', strokeWeight:8, strokeOpacity:0.8});
+    map.addOverlay(path4);
+    path4.addEventListener("click", function() {
+        alert(contentString04);
+    });
+    var contentString05 = '第 5 段路线：Singapore, Singapore --> London, United Kingdom of Great Britain and Northern Ireland\n交通方式：plane\n时间花费：17.0000 小时\n路费开销：$ 450.00\n参考信息来源："COPY: http://www.momondo.com/multicity/?Search=true&TripType=multi&SegNo=1&SO0=SIN&SD0=DCA&SDP0=16-05-2013&AD=1&NA=false#Search=true&TripType=oneway&SegNo=1&SO0=SIN&SD0=LON&SDP0=16-05-2013&AD=1&DO=false&NA=false"';
+    var path5 = new BMap.Polyline([
+        new BMap.Point(-0.0833, 51.6000),
+        new BMap.Point(103.8520, 1.2810)
+    ], {strokeColor:'#18a45b', strokeWeight:8, strokeOpacity:0.8});
+    map.addOverlay(path5);
+    path5.addEventListener("click", function() {
+        alert(contentString05);
+    });
+	</script>
+</body>
+</html>
